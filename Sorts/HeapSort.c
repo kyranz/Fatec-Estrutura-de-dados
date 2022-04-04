@@ -44,7 +44,6 @@ void heapfy(long vet[], long root, long size) {
     }
     if (max != root) {
         swapl(vet, root, max);
-        showl(vet,size);
         heapfy(vet, max, size);
     }
 }

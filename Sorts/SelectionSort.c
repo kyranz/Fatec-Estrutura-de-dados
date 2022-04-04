@@ -9,8 +9,6 @@ void swap(int vetor[], int x, int y) {
 
 void SelectionSort(int vetor[], int size) {
     int indx, indy;
-
-    show(vetor,size);
     
     for (indx = 0; indx < size - 1; indx++) {
         for (indy = indx + 1; indy < size; indy++) {

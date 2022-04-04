@@ -9,7 +9,6 @@ void swap(int vetor[], int x, int y) {
 
 void InsertionSort(int vet[], int size){
     int i, j, key;
-    show(vet,size);
 
     for (i = 1; i < size; i++) {
         key = vet[i];
