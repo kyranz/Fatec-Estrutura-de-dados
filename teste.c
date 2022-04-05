@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "Sorts\BubbleSort.c"
+#include "Sorts\InsertionSort.c"
 
 void show_100(int *arr) {
     int i;
@@ -31,7 +31,7 @@ int main() {
 
     start = clock();
 
-    BubbleSort(arr, n);
+    InsertionSort(arr, n);
 
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
