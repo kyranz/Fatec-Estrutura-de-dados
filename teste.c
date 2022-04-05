@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "Sorts\QuickSort.c"
+#include "Sorts\BubbleSort.c"
 
 void show_100(int *arr) {
     int i;
@@ -20,10 +20,10 @@ int main() {
     clock_t start, end;
     double cpu_time_used;
 
-    int n = 10000000;
+    int n = 1000000;
     arr = (int *) malloc(n * sizeof(int));
 
-    arquivo = fopen("Random numbers\\10000000.txt", "rb");
+    arquivo = fopen("Random numbers\\1000000.txt", "rb");
     fread(arr, sizeof(int), n, arquivo);
     fclose(arquivo);
 
@@ -31,7 +31,7 @@ int main() {
 
     start = clock();
 
-    QuickSort(arr, 0, n - 1);
+    BubbleSort(arr, n);
 
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
