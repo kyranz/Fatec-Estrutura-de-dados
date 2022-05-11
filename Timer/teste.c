@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "Sorts\InsertionSort.c"
+#include "..\Sorts\QuickSort.c"
 
 void show_100(int *arr) {
     int i;
@@ -23,7 +23,7 @@ int main() {
     int n = 1000000;
     arr = (int *) malloc(n * sizeof(int));
 
-    arquivo = fopen("Random numbers\\1000000.txt", "rb");
+    arquivo = fopen("..\\Random numbers\\1000000.txt", "rb");
     fread(arr, sizeof(int), n, arquivo);
     fclose(arquivo);
 

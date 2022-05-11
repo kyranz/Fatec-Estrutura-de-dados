@@ -13,7 +13,7 @@ int main(/*int argc, char ** argv*/) {
 
     FILE *arquivo;
 
-    arquivo = fopen("Random numbers\\1000.txt", "wb");
+    arquivo = fopen("..\\Random numbers\\1000.txt", "wb");
     int *arr, i;
 
     // int n = atoi(argv[1]);
