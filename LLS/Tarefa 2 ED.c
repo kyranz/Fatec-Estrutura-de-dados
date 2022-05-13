@@ -24,7 +24,7 @@ int main() {
     node *pilha, *aux;
 
     printf("Digite a expressao a ser analizada:\n");
-    scanf("%s", &expr);
+    gets(expr);
     tam = strlen(expr);
 
     inicializar(&pilha);
