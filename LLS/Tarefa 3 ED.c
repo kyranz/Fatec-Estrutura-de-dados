@@ -40,7 +40,7 @@ void llsGets(node **lls) {
 int main() {
 
     int i, tam;
-    BOOL str_valida = TRUE, p_valida = TRUE;
+    BOOL str_valida = TRUE, p_valido = TRUE;
     node *padrao, *str, *ch_padrao, *ch_str;
 
     inicializar(&str);
@@ -107,15 +107,15 @@ int main() {
             if (ch_str->info != ch_padrao->info) str_valida = FALSE;
             break;
         default:
-            p_valida = FALSE;
+            p_valido = FALSE;
             str_valida = FALSE;
             break;
         }
 
-        if (!p_valida) break;
+        if (!p_valido) break;
     }
     
-    if (!p_valida) {
+    if (!p_valido) {
         printf("\n\nErro: Caractere invalido no padrao -> %c", ch_padrao->info);
         return -1;
     }

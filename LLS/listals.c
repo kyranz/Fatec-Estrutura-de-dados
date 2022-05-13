@@ -16,8 +16,8 @@ struct Snode {
     node *proximo;
 };
 
-void inicializar(node **elemento) {
-    *elemento = NULL;
+void inicializar(node **lls) {
+    *lls = NULL;
 }
 
 BOOL isEmpty(node *lls) {
