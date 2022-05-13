@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <conio.h>
-#include "listals.c"
+#include "lls.c"
 
 /*
     Receber duas strings
@@ -24,11 +24,12 @@
 void llsGets(node **lls) {
     char tmp;
 
+
     do {
         tmp = getche();
         if (tmp == 8) {
             printf(" %c", 8);
-            if (getSize(*lls) > 1) removerPosN(lls, getSize(*lls) - 1);
+            removerFinal(lls);
         }
         else if (tmp != 13) inserirFinal(lls, tmp);
         else break;
@@ -46,19 +47,13 @@ int main() {
     inicializar(&str);
     inicializar(&padrao);
 
-    printf("Tamanho maximo dos inputs: 100\n");
-
     printf("\nDigite o padrao:\n");
-    inserirInicio(&padrao, 0);
     llsGets(&padrao);
-    removerFinal(&padrao);
 
     show(padrao);
 
     printf("\n\nDigite a string a ser validada:\n");
-    inserirInicio(&str, 0);
     llsGets(&str);
-    removerFinal(&str);
 
     show(str);
 

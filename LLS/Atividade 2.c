@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "listals.c"
+#include "lls.c"
 
 /*
     Exercício:
@@ -23,6 +23,7 @@ int main() {
     BOOL corresp = TRUE;
     node *pilha, *aux;
 
+    printf("Tamanho Maximo: 100 caracteres\n");
     printf("Digite a expressao a ser analizada:\n");
     gets(expr);
     tam = strlen(expr);
@@ -34,7 +35,7 @@ int main() {
         case '(':
         case '[':
         case '{':
-            if (corresp) inserirInicio(&pilha, expr[i]);
+            inserirFinal(&pilha, expr[i]);
             break;
 
         case ')':
@@ -44,12 +45,12 @@ int main() {
                 corresp = FALSE;
                 break;
             }
-            aux = getElemPosN(&pilha, 1);
+            aux = getElemPosN(&pilha, getSize(pilha));
             if (aux->info + 1 == expr[i] || aux->info + 2 == expr[i]) {
-                removerInicio(&pilha);
+                removerFinal(&pilha);
             }
-            else if (corresp) {
-                inserirInicio(&pilha, expr[i]);
+            else {
+                inserirFinal(&pilha, expr[i]);
                 corresp = FALSE;
             }
             break;

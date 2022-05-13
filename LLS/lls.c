@@ -116,7 +116,7 @@ void inserirInicio(node **lls, char info) {
 
 void inserirFinal(node **lls, char info) {
     int final = getSize(*lls);
-    inserirPosN(lls, info, final);
+    inserirPosN(lls, info, ++final);
 }
 
 node * removerFinal(node **lls) {
@@ -130,10 +130,10 @@ void destruir(node **lls) {
     }
 }
 
-void show(node *inicio) {
-    while (inicio != NULL) {
+void show(node *lls) {
+    while (lls != NULL) {
         printf("\n[%x] [%c] [%x]",
-                inicio, inicio->info, inicio->proximo);
-        inicio = inicio->proximo;
+                lls, lls->info, lls->proximo);
+        lls = lls->proximo;
     }
 }
