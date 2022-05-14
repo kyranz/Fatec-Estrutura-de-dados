@@ -77,7 +77,7 @@ node * removerPosN (node **lls, int pos) {
     if (pos == 1) {
         aux = *lls;
         *lls = aux->proximo;
-        aux->proximo = NULL;
+        free(aux->proximo);
         return aux;
     }
 
@@ -89,7 +89,7 @@ node * removerPosN (node **lls, int pos) {
 
     aux = auxN->proximo;
     auxN->proximo = aux->proximo;
-    aux->proximo = NULL;
+    free(aux->proximo);
 
     return aux;
 

@@ -26,6 +26,7 @@ int main() {
     printf("Tamanho Maximo: 100 caracteres\n");
     printf("Digite a expressao a ser analizada:\n");
     gets(expr);
+    printf("\n");
     tam = strlen(expr);
 
     inicializar(&pilha);
@@ -42,10 +43,12 @@ int main() {
         case ']':
         case '}':
             if (isEmpty(pilha)) {
+                inserirFinal(&pilha, expr[i]);
                 corresp = FALSE;
                 break;
             }
             aux = getElemPosN(&pilha, getSize(pilha));
+            printf("%c == %c\n", aux->info, expr[i]);
             if (aux->info + 1 == expr[i] || aux->info + 2 == expr[i]) {
                 removerFinal(&pilha);
             }
@@ -59,11 +62,10 @@ int main() {
             break;
         }
         if (!corresp) break;
-        printf("%c", expr[i]);
+        // printf("%c", expr[i]);
     }
 
-    for (; i < strlen(expr); i++) printf("%c", expr[i]);
-    printf("\n");
+    // for (; i < strlen(expr); i++) printf("%c", expr[i]);
 
     show(pilha);
 
