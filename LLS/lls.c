@@ -132,7 +132,7 @@ void destruir(node **lls) {
 
 void show(node *lls) {
     while (lls != NULL) {
-        printf("\n[%x] [%c] [%x]",
+        printf("\n[%#x] [%c] [%#x]",
                 lls, lls->info, lls->proximo);
         lls = lls->proximo;
     }
