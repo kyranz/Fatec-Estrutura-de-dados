@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.H>
 
-void CreateVectorSorted(BTREE *tree, int **vet, int *pos)  {
+void CreateVectorSorted(BTREE *tree, int *vet, int *pos)  {
     int info;
     
     if (tree == NULL) {
@@ -13,10 +13,9 @@ void CreateVectorSorted(BTREE *tree, int **vet, int *pos)  {
     
     CreateVectorSorted(tree->left, vet, pos);
     
-    (*vet)[(*pos)++] = info;
+    vet[(*pos)++] = info;
 
-    CreateVectorSorted(tree->right, vet, pos);    
-    
+    CreateVectorSorted(tree->right, vet, pos);
 }
 
 
@@ -40,7 +39,7 @@ int main(void) {
     int pos = 0;
     int *vet = malloc(sizeof(int) * size);
 
-    CreateVectorSorted(btree, &vet, &pos);
+    CreateVectorSorted(btree, vet, &pos);
     printf("\nArvore Binaria transformada num vetor ordenado:\n");
     for (int i = 0; i < size; i++) printf("%i, ", vet[i]);
 
