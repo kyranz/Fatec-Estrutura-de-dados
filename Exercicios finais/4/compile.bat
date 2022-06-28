@@ -1,0 +1,1 @@
+g++ -Wall btree.cpp btree.h exercicio_4.cpp exercicio_4.h exercicio_4_main.cpp -o teste.exe

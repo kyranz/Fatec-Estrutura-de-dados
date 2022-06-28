@@ -1,0 +1,1 @@
+g++ -Wall descriptor.cpp descriptor.h exercicio_3.h "exercicio_3 copy.cpp" exercicio_3_main.cpp queue.cpp queue.h -o teste.exe

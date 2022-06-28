@@ -1,0 +1,1 @@
+g++ -Wall descriptor.cpp descriptor.h exercicio_2.cpp exercicio_2.h exercicio_2_main.cpp -o teste.exe
